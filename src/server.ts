@@ -8,6 +8,8 @@ const main = () => {
       throw new Error('No Port Specified. Please include a PORT for the app to run on');
     }
 
+    console.log(process.env.PORT)
+
     app.listen(PORT, () => {
       console.log(`listening on port: ${PORT}`);
     });

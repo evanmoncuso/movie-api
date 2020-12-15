@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "ENVIRONMENT=development PORT=4466 node dist/server.js"
+    "start:local": "ENVIRONMENT=development PORT=4466 node dist/server.js",
+    "start": "node dist/server.js"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.0",
@@ -17,5 +18,8 @@
     "express": "^4.17.1",
     "nodemon": "^2.0.6",
     "typescript": "^4.1.3"
+  },
+  "engines": {
+    "node": "12.x"
   }
 }
