@@ -1,0 +1,17 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS movies (
+  id SERIAL PRIMARY KEY,
+  uuid uuid UNIQUE NOT NULL DEFAULT uuid_generate_v4(),
+
+  title VARCHAR(255) NOT NULL,
+
+  "year" INTEGER NOT NULL,
+
+  director VARCHAR(255) NOT NULL,
+  stars VARCHAR(500) NOT NULL,
+  
+  created_at TIMESTAMP NOT NULL DEFAULT now(),
+  last_updated TIMESTAMP NOT NULL DEFAULT now()
+);
+
