@@ -3,6 +3,11 @@ import * as bp from 'body-parser';
 import cors from 'cors';
 
 import logger  from './middleware/logger';
+import { 
+  createMovie,
+  getMovieByUUID,
+  getMovies,
+} from './routes/movies';
 
 const environment = process.env.ENVIRONMENT || 'development';
 
@@ -29,5 +34,10 @@ app.get('/health', (_, res: express.Response) => {
     environment,
   })
 });
+
+app.get('/movies', getMovies);
+app.post('/movies', createMovie);
+
+app.get('/movie/:uuid', getMovieByUUID);
 
 export default app;

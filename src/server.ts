@@ -7,8 +7,8 @@ const main = () => {
     if (!PORT) {
       throw new Error('No Port Specified. Please include a PORT for the app to run on');
     }
-
-    console.log(process.env.PORT)
+    
+    console.log(process.env.DATABASE_URL)
 
     app.listen(PORT, () => {
       console.log(`listening on port: ${PORT}`);
